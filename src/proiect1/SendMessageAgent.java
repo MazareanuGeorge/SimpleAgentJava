@@ -40,9 +40,9 @@ public class SendMessageAgent extends Agent {
         ACLMessage remsg = myAgent.receive();
             if(remsg!=null){
                 String reply = remsg.getContent();
-                String sender = remsg.getSender().getName().substring(0,1);
+                String senderAgent = remsg.getSender().getName().substring(0,1);
                 System.out.println("Reply From "+String.valueOf(remsg.getSender().getName()).substring(0,1)+":- "+reply);
-                JOptionPane.showMessageDialog(null, "Reply From "+sender +":- "+reply, "Response from : "+sender , JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Reply From "+senderAgent +":- "+reply, "Response from Agent: "+senderAgent , JOptionPane.INFORMATION_MESSAGE);
             }
             else{
             block();
